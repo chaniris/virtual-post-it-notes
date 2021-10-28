@@ -67,7 +67,7 @@ const App = () => {
 
       <main>
         <section>
-          <div class="wrapper">
+          <div className="wrapper">
             <ul>
               {
                 entryList.map((entry) => {

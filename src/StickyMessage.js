@@ -10,7 +10,7 @@ const StickyMessage = (props) => {
 
             <button 
                 className='removeButton'
-                nClick={removeEntry}
+                onClick={removeEntry}
             >
                 <i className="far fa-trash-alt" aria-hidden="true">
                     <span className="sr-only">Remove</span>
