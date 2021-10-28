@@ -6,14 +6,15 @@ const FormContainer = (props) => {
         <form onSubmit={handleSubmit}>
             <label htmlFor="userMessage">Message:</label>
             <textarea 
+                maxLength="100"
                 id="userMessage"
                 onChange={handleChange}
                 value={userInput}
             >
             </textarea>
 
-            <p>{inputError}</p>
-            <button>Pin 📌</button>
+            <p className='errorMessage'>{inputError}</p>
+            <button className='pushButton'>Pin 📌</button>
         </form>
     );
 }

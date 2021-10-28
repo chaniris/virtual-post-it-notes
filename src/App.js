@@ -67,19 +67,21 @@ const App = () => {
 
       <main>
         <section>
-          <ul>
-            {
-              entryList.map((entry) => {
-                return(
-                  <StickyMessage 
-                    key={entry.id}
-                    title={entry.title}
-                    removeEntry={() => handleRemoval(entry.id)}
-                  />
-                )
-              })
-            }
-          </ul>
+          <div class="wrapper">
+            <ul>
+              {
+                entryList.map((entry) => {
+                  return(
+                    <StickyMessage 
+                      key={entry.id}
+                      title={entry.title}
+                      removeEntry={() => handleRemoval(entry.id)}
+                    />
+                  )
+                })
+              }
+            </ul>
+          </div>
         </section>
       </main>
 

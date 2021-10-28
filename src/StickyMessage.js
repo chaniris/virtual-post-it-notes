@@ -8,7 +8,14 @@ const StickyMessage = (props) => {
         <li key={uniqueId}>
             <p>{title}</p>
 
-            <button onClick={removeEntry}>Remove</button>
+            <button 
+                className='removeButton'
+                nClick={removeEntry}
+            >
+                <i className="far fa-trash-alt" aria-hidden="true">
+                    <span className="sr-only">Remove</span>
+                </i>
+            </button>
         </li>
     ); 
 }
