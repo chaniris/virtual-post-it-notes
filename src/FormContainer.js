@@ -4,17 +4,18 @@ const FormContainer = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="userMessage">Message:</label>
+            <label htmlFor="userMessage">Your message here:</label>
             <textarea 
                 maxLength="100"
                 id="userMessage"
                 onChange={handleChange}
                 value={userInput}
+                placeholder="Ex. Prep holiday party and open up discussion for theme."
             >
             </textarea>
 
             <p className='errorMessage'>{inputError}</p>
-            <button className='pushButton'>Pin 📌</button>
+            <button className='pushButton'>Post It</button>
         </form>
     );
 }

@@ -15,6 +15,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 body {
     font-family: 'Roboto Slab', serif;
+    background-color: #eee;
     font-size: 125%; 
     margin: 0; 
     padding: 0; 
@@ -29,39 +30,64 @@ body {
 
 /***** header *****/
 
+header {
+    margin: 50px; 
+} 
+
 h1 {
     font-family: 'Permanent Marker', cursive;
     font-size: 6rem;
+    color: #caed9d; 
+    margin: 25px auto; 
     text-transform: uppercase;
+    text-shadow: 5px 5px black, 10px 10px #c1b0a1;
 } 
 
 h2 {
     font-size: 1.4rem; 
+    width: 40%; 
+    margin: 0 auto; 
 } 
 
 
 /***** form *****/
 
+form {
+    border: 5px solid #fbc60e; 
+    border-radius: 10px; 
+    width: 50%; 
+    margin: 50px auto; 
+    padding: 50px;
+} 
+
 textarea {
-    display: block; 
     resize: none; 
-    height: 200px; 
+    display: block; 
     width: 400px; 
-    margin: 0 auto;
+    height: 100px; 
+    margin: 25px auto;
+    padding: 10px; 
+    border-radius: 10px;
 } 
 
 .errorMessage {
+    font-size: 1rem; 
     color: red;
 } 
 
 .pushButton {
-    cursor: pointer; 
+    font-family: 'Roboto Slab', serif;
+    background-color: #fbc60e;
+    border: 2px solid #fbc60e; 
+    padding: 10px 15px; 
+    cursor: pointer;
+    border-radius: 5px;
 } 
 
 .pushButton:focus,
 .pushButton:hover {
-    background-color: #666;
     transition: all 0.2s;
+    box-shadow: 3px 3px #666; 
 } 
 
 
@@ -70,25 +96,34 @@ textarea {
 
 ul {
     display: flex; 
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 50px 0; 
     padding: 0;
 } 
 
 li {
     list-style-type: none;
+    background-color: #eee; 
+    background-image: url(../../assets/sticky_note.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 300px; 
-    border: 2px solid red; 
+    height: 300px; 
     margin: 20px; 
+    padding: 20px; 
+    overflow-wrap: break-word;
     position: relative; 
 } 
 
 .removeButton {
     position: absolute; 
-    top: 0; 
+    bottom: 0; 
     right: 0; 
     font-size: 25px;
+    color: #999; 
+    border: none; 
     cursor: pointer; 
 }
 
@@ -96,6 +131,7 @@ li {
 .removeButton:focus {
     color: #333; 
     transition: all 0.2s;
+    outline: 0; 
 } 
 
 
@@ -103,9 +139,9 @@ li {
 /***** footer *****/
 
 footer {
+    font-size: 1rem;
     background-color: black;
     color: white; 
-    font-size: 1rem;
     padding: 1px; 
 } 
 
@@ -120,8 +156,8 @@ footer a:visited {
 
 footer a:focus, 
 footer a:hover {
-    outline: none;
     color: blue; 
-    border-bottom: 2px solid blue; 
     transition: all 0.2s;
+    border-bottom: 2px solid blue; 
+    outline: none;
 } 

@@ -56,7 +56,7 @@ const App = () => {
     <div className="App">
       <header>
         <h1>Virtual Post-It Notes</h1>
-        <h2>Subheading here</h2>
+        <h2>Welcome to the digital whiteboard, a visual workspace for sharing ideas digitally.</h2>
         <FormContainer 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
