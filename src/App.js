@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Virtual Post-It Notes</h1>
+        <h2>Subheading here</h2>
       </header>
+
+      <main>
+
+      </main>
+
+      <footer>
+        <p>
+          Copyright © 2021
+          {' '}
+          <a href='https://junocollege.com/'>Juno College of Technology</a>
+          {' '}
+          (formerly HackerYou)
+        </p>
+      </footer>
     </div>
   );
 }
