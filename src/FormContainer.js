@@ -1,6 +1,6 @@
 const FormContainer = (props) => {
 
-    const { handleSubmit, handleChange } = props; 
+    const { handleSubmit, handleChange, inputError } = props;
 
     return (
         <form onSubmit={handleSubmit}>
@@ -11,6 +11,7 @@ const FormContainer = (props) => {
             
             </textarea>
 
+            <p>{inputError}</p>
             <button>Pin 📌</button>
         </form>
     );

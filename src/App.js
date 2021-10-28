@@ -11,6 +11,7 @@ const App = () => {
   const [entryList, setEntryList] = useState([]);
   const [userInput, setUserInput] = useState('');
 
+  const [inputError, setInputError] = useState('');
 
   useEffect(() => {
     const dbRef = ref(realtime);
@@ -38,7 +39,8 @@ const App = () => {
     if (userInput) {
       const dbRef = ref(realtime); 
       push(dbRef, userInput); 
-    } 
+    } else 
+      setInputError('Input field cannot be blank.');
   }
 
   return (
@@ -49,6 +51,7 @@ const App = () => {
         <FormContainer 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
+          inputError={inputError}
         />
       </header>
 
