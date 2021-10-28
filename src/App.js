@@ -1,4 +1,4 @@
-import './styles/sass/App.css';
+import './styles/styles.css';
 
 import realtime from './firebase';
 import { ref, onValue, push, remove } from 'firebase/database';

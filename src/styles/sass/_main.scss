@@ -1,0 +1,131 @@
+/***** header *****/
+
+header {
+    margin: 50px; 
+} 
+
+h1 {
+    font-family: $font-secondary; 
+    font-size: 6rem;
+    color: $color-primary; 
+    margin: 25px auto; 
+    text-transform: uppercase;
+    text-shadow: 5px 5px black, 10px 10px $color-lightgray;
+} 
+
+h2 {
+    font-size: 1.4rem; 
+    width: 40%; 
+    margin: 0 auto; 
+} 
+
+
+/***** form *****/
+
+form {
+    border: 5px solid $color-secondary; 
+    border-radius: 10px; 
+    width: 50%; 
+    margin: 50px auto; 
+    padding: 50px;
+} 
+
+textarea {
+    resize: none; 
+    display: block; 
+    width: 400px; 
+    height: 100px; 
+    margin: 25px auto;
+    padding: 10px; 
+    border-radius: 10px;
+} 
+
+.errorMessage {
+    font-size: 1rem; 
+    color: red;
+} 
+
+.pushButton {
+    font-family: $font-primary; 
+    background-color: $color-secondary;
+    border: 2px solid $color-secondary;
+    padding: 10px 15px; 
+    cursor: pointer;
+    border-radius: 5px;
+} 
+
+.pushButton:focus,
+.pushButton:hover {
+    transition: all 0.2s;
+    box-shadow: 3px 3px $color-mediumgray; 
+} 
+
+
+/***** firebase data *****/
+
+ul {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 50px 0; 
+    padding: 0;
+} 
+
+li {
+    list-style-type: none;
+    background-color: $color-lightlightgray; 
+    background-image: url(../assets/sticky_note.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px; 
+    height: 300px; 
+    margin: 20px; 
+    padding: 20px; 
+    overflow-wrap: break-word;
+    position: relative; 
+} 
+
+.removeButton {
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    font-size: 25px;
+    color: $color-lightgray; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.removeButton:hover, 
+.removeButton:focus {
+    color: $color-darkgray; 
+    transition: all 0.2s;
+    outline: 0; 
+} 
+
+
+/***** footer *****/
+
+footer {
+    font-size: 1rem;
+    background-color: black;
+    color: white; 
+    padding: 1px; 
+} 
+
+footer a {
+    text-decoration: none;
+} 
+
+footer a,
+footer a:visited {
+    color: white; 
+} 
+
+footer a:focus, 
+footer a:hover {
+    color: blue; 
+    transition: all 0.2s;
+    border-bottom: 2px solid blue; 
+    outline: none;
+} 
