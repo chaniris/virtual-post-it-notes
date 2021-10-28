@@ -5,6 +5,7 @@ import { ref, onValue, push } from 'firebase/database';
 import { useState, useEffect } from 'react';
 
 import FormContainer from './FormContainer.js';
+import StickyMessage from './StickyMessage.js';
 
 const App = () => {
   const [entryList, setEntryList] = useState([]);
@@ -57,7 +58,10 @@ const App = () => {
             {
               entryList.map((entry) => {
                 return(
-                  <p>key={entry.id}</p>
+                  <StickyMessage 
+                    key={entry.id}
+                    title={entry.title}
+                  />
                 )
               })
             }
