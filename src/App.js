@@ -1,7 +1,7 @@
 import './styles/sass/App.css';
 
 import realtime from './firebase';
-import { ref, onValue, push } from 'firebase/database';
+import { ref, onValue, push, remove } from 'firebase/database';
 import { useState, useEffect } from 'react';
 
 import FormContainer from './FormContainer.js';
@@ -25,6 +25,7 @@ const App = () => {
         }
         dbArray.push(entryItem);
       }
+      // reverse array order so that newest data is at the top 
       dbArray.reverse();
       setEntryList(dbArray);
     });
@@ -32,15 +33,23 @@ const App = () => {
 
   const handleChange = (event) => {
     setUserInput(event.target.value); 
+    setInputError('');
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (userInput) {
+    if (userInput && userInput !== ' ') {
       const dbRef = ref(realtime); 
       push(dbRef, userInput); 
-    } else 
+      setUserInput('');
+    } else {
       setInputError('Input field cannot be blank.');
+    }
+  }
+
+  const handleRemoval = (deleteField) => {
+    const childNode = ref(realtime, deleteField);
+    remove(childNode);
   }
 
   return (
@@ -51,6 +60,7 @@ const App = () => {
         <FormContainer 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
+          userInput={userInput}
           inputError={inputError}
         />
       </header>
@@ -64,6 +74,7 @@ const App = () => {
                   <StickyMessage 
                     key={entry.id}
                     title={entry.title}
+                    removeEntry={() => handleRemoval(entry.id)}
                   />
                 )
               })

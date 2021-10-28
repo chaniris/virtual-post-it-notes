@@ -1,14 +1,15 @@
 const FormContainer = (props) => {
 
-    const { handleSubmit, handleChange, inputError } = props;
+    const { handleSubmit, handleChange, userInput, inputError } = props;
 
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="userMessage">Message:</label>
-            <textarea id="userMessage"
-            onChange={handleChange}
+            <textarea 
+                id="userMessage"
+                onChange={handleChange}
+                value={userInput}
             >
-            
             </textarea>
 
             <p>{inputError}</p>
