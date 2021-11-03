@@ -443,6 +443,10 @@ footer a:hover {
 }
 /* landscape phones and down */
 @media (max-width: 480px) {
+  h1 {
+    font-size: 4rem;
+  }
+
   textarea {
     width: 220px;
     height: 220px;
