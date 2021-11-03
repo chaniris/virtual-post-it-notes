@@ -75,7 +75,9 @@ const App = () => {
                     <StickyMessage 
                       key={entry.id}
                       title={entry.title}
-                      removeEntry={() => handleRemoval(entry.id)}
+                      removeEntry={() => {
+                        if (window.confirm('Are you sure you wish to delete this item?')) handleRemoval(entry.id) 
+                      }}
                     />
                   )
                 })
