@@ -1,6 +1,6 @@
 const FormContainer = (props) => {
 
-    const { handleSubmit, handleChange, userInput, inputError } = props;
+    const { handleSubmit, handleChange, userInput, inputError, onKeyPress } = props;
 
     return (
         <form onSubmit={handleSubmit}>
@@ -11,6 +11,7 @@ const FormContainer = (props) => {
                 onChange={handleChange}
                 value={userInput}
                 placeholder="Ex. Prep holiday party and open up discussion for theme."
+                onKeyPress={onKeyPress}
             >
             </textarea>
 

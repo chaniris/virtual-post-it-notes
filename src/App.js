@@ -3,9 +3,9 @@ import './styles/styles.css';
 import realtime from './firebase';
 import { ref, onValue, push, remove } from 'firebase/database';
 import { useState, useEffect } from 'react';
-import Swal from 'sweetalert2';
 import FormContainer from './FormContainer.js';
 import StickyMessage from './StickyMessage.js';
+import Swal from 'sweetalert2';
 
 const App = () => {
   const [entryList, setEntryList] = useState([]);
@@ -47,6 +47,19 @@ const App = () => {
     }
   }
 
+  const onKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (userInput && userInput.trim(userInput.length !== 0)) {
+        const dbRef = ref(realtime);
+        push(dbRef, userInput);
+        setUserInput('');
+      } else {
+        setInputError('Input field cannot be blank.');
+      }
+    }  
+  };
+
   const handleRemoval = (deleteField) => {
     const childNode = ref(realtime, deleteField);
     remove(childNode);
@@ -62,6 +75,7 @@ const App = () => {
           handleChange={handleChange}
           userInput={userInput}
           inputError={inputError}
+          onKeyPress={onKeyPress}
         />
       </header>
 
