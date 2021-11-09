@@ -3,7 +3,7 @@ import './styles/styles.css';
 import realtime from './firebase';
 import { ref, onValue, push, remove } from 'firebase/database';
 import { useState, useEffect } from 'react';
-
+import Swal from 'sweetalert2';
 import FormContainer from './FormContainer.js';
 import StickyMessage from './StickyMessage.js';
 
@@ -53,7 +53,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className='App'>
       <header>
         <h1>Virtual Post-It Notes</h1>
         <h2>Welcome to the digital whiteboard, a visual workspace for sharing ideas digitally.</h2>
@@ -67,7 +67,7 @@ const App = () => {
 
       <main>
         <section>
-          <div className="wrapper">
+          <div className='wrapper'>
             <ul>
               {
                 entryList.map((entry) => {
@@ -76,7 +76,25 @@ const App = () => {
                       key={entry.id}
                       title={entry.title}
                       removeEntry={() => {
-                        if (window.confirm('Are you sure you wish to delete this item?')) handleRemoval(entry.id) 
+                        Swal.fire({
+                          title: 'Are you sure?',
+                          text: 'This action cannot be undone.',
+                          icon: 'warning',
+                          showCancelButton: true,
+                          confirmButtonColor: '#fbc60e',
+                          cancelButtonColor: '#999',
+                          confirmButtonText: 'Yes'
+                        }).then(result => {
+                          if (result.value) {
+                            handleRemoval(entry.id); 
+                            Swal.fire({
+                                title: 'Success!',
+                                text: 'Your entry has been deleted.',
+                                icon: 'success',
+                                confirmButtonColor: '#fbc60e'
+                              });
+                          }
+                        });
                       }}
                     />
                   )

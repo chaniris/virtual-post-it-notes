@@ -310,6 +310,7 @@ textarea {
   transition: all 0.2s;
   -webkit-box-shadow: 3px 3px #666;
           box-shadow: 3px 3px #666;
+  outline: 0;
 }
 
 /***** firebase data *****/
@@ -360,6 +361,19 @@ li {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   outline: 0;
+}
+
+.swal2-popup {
+  font-size: 1rem !important;
+  margin: 0 auto;
+}
+
+.swal2-title {
+  width: 100%;
+}
+
+button {
+  font-family: "Roboto Slab", serif;
 }
 
 /***** footer *****/
