@@ -38,7 +38,7 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (userInput && userInput !== ' ') {
+    if (userInput && userInput.trim(userInput.length !== 0)) {
       const dbRef = ref(realtime); 
       push(dbRef, userInput); 
       setUserInput('');
