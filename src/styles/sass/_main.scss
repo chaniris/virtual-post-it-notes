@@ -58,6 +58,7 @@ textarea {
 .pushButton:hover {
     transition: all 0.2s;
     box-shadow: 3px 3px $color-mediumgray; 
+    outline: 0; 
 } 
 
 
@@ -101,6 +102,19 @@ li {
     color: $color-darkgray; 
     transition: all 0.2s;
     outline: 0; 
+} 
+
+.swal2-popup {
+    font-size: 1rem !important;
+    margin: 0 auto; 
+}
+
+.swal2-title {
+    width: 100%; 
+} 
+
+button {
+    font-family: $font-primary;
 } 
 
 
