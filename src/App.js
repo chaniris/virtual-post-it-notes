@@ -4,6 +4,7 @@ import realtime from './firebase';
 import { ref, onValue, push, remove } from 'firebase/database';
 import { useState, useEffect } from 'react';
 import FormContainer from './FormContainer.js';
+import Suggestion from './Suggestion.js';
 import StickyMessage from './StickyMessage.js';
 import Swal from 'sweetalert2';
 
@@ -83,6 +84,7 @@ const App = () => {
         <section>
           <div className='wrapper'>
             <ul>
+              <Suggestion />
               {
                 entryList.map((entry) => {
                   return(
@@ -126,6 +128,11 @@ const App = () => {
           <a href='https://junocollege.com/'>Juno College of Technology</a>
           {' '}
           (formerly HackerYou)
+        </p>
+        <p>
+          Data courtesy of
+          {' '}
+          <a href='https://www.boredapi.com/'>Bored API</a>
         </p>
       </footer>
     </div>

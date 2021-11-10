@@ -402,6 +402,37 @@ footer a:hover {
   outline: none;
 }
 
+/***** api data *****/
+.suggestionContainer {
+  background-image: url(../assets/post-it-note.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  margin: 20px;
+  padding: 20px;
+  overflow-wrap: break-word;
+  position: relative;
+  margin-top: -25px;
+}
+
+.suggestionContainer h3,
+.suggestionContainer p {
+  -webkit-transform: rotate(4deg);
+          transform: rotate(4deg);
+  margin-top: 60px;
+}
+
+.suggestionContainer h3 {
+  margin-right: 15px;
+}
+
+.suggestionContainer p {
+  margin-top: 0;
+  margin-right: 20px;
+  padding: 20px;
+}
+
 /***** setup *****/
 @media (max-width: 1080px) {
   h1 {
