@@ -78,13 +78,13 @@ const App = () => {
           inputError={inputError}
           onKeyPress={onKeyPress}
         />
-        <Suggestion />
       </header>
 
       <main>
         <section>
           <div className='wrapper'>
             <ul>
+              <Suggestion />
               {
                 entryList.map((entry) => {
                   return(
