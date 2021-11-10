@@ -161,7 +161,8 @@ footer a:hover {
 } 
 
 .suggestionContainer h3, 
-.suggestionContainer p {
+.suggestionContainer p,
+.loading {
     transform: rotate(4deg);
     margin-top: 60px; 
 } 
@@ -174,4 +175,14 @@ footer a:hover {
     margin-top: 0; 
     margin-right: 20px;  
     padding: 20px; 
+} 
+
+.loading {
+    width: 150px; 
+    margin: 0 auto; 
+    padding-right: 25px; 
+    height: 50%; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
 } 
