@@ -5,6 +5,7 @@ import gif from "./assets/giphy.gif"
 const Suggestion = () => {
     const [ suggestions, setSuggestions ] = useState([]);
     const [ loading, setLoading ] = useState(true);
+    const [ errorMessage, setErrorMessage ] = useState(false);
 
     useEffect(() => {
         axios({
@@ -14,25 +15,26 @@ const Suggestion = () => {
         }).then((res) => {
             setLoading(false);
             setSuggestions(res.data);
+        }).catch((error) => {
+            setErrorMessage(error); 
         });
     }, []);
 
     return (
         <div className='suggestionContainer'>
             <h3>Idea of the Day</h3>
-            {loading 
-
-            ? 
-
-            <div className="loading">
-                <img src={gif} alt="Loading screen" />
-            </div> 
-
-            : 
-            
-            <p key={suggestions.key}>
-                {suggestions.activity}
-            </p>
+            {errorMessage ? <p>Learn a new framework</p> :
+                (
+                    loading 
+                    ?
+                    <div className="loading">
+                        <img src={gif} alt="Loading screen" />
+                    </div> 
+                    :
+                    <p key={suggestions.key}>
+                        {suggestions.activity}
+                    </p>
+                )
             }
         </div>
     )
