@@ -123,14 +123,14 @@ const App = () => {
         <p>
           Copyright © 2021
           {' '}
-          <a href='https://junocollege.com/'>Juno College of Technology</a>
+          <a href='https://junocollege.com/' target="_blank" rel="noopener">Juno College of Technology</a>
           {' '}
           (formerly HackerYou)
         </p>
         <p>
           Data courtesy of
           {' '}
-          <a href='https://www.boredapi.com/'>Bored API</a>
+          <a href='https://www.boredapi.com/' target="_blank" rel="noopener">Bored API</a>
         </p>
       </footer>
     </div>
