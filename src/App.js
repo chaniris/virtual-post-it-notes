@@ -1,5 +1,4 @@
 import './styles/styles.css';
-
 import realtime from './firebase';
 import { ref, onValue, push, remove } from 'firebase/database';
 import { useState, useEffect } from 'react';
@@ -9,10 +8,9 @@ import StickyMessage from './StickyMessage.js';
 import Swal from 'sweetalert2';
 
 const App = () => {
-  const [entryList, setEntryList] = useState([]);
-  const [userInput, setUserInput] = useState('');
-
-  const [inputError, setInputError] = useState('');
+  const [ entryList, setEntryList ] = useState([]);
+  const [ userInput, setUserInput ] = useState('');
+  const [ inputError, setInputError ] = useState('');
 
   useEffect(() => {
     const dbRef = ref(realtime);
@@ -22,7 +20,7 @@ const App = () => {
       for (let propertyName in myData) {
         const entryItem = {
           id: propertyName,
-          title: myData[propertyName]
+          message: myData[propertyName]
         }
         dbArray.push(entryItem);
       }
@@ -74,9 +72,9 @@ const App = () => {
         <FormContainer 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
+          onKeyPress={onKeyPress}
           userInput={userInput}
           inputError={inputError}
-          onKeyPress={onKeyPress}
         />
       </header>
 
@@ -90,7 +88,7 @@ const App = () => {
                   return(
                     <StickyMessage 
                       key={entry.id}
-                      title={entry.title}
+                      message={entry.message}
                       removeEntry={() => {
                         Swal.fire({
                           title: 'Are you sure?',

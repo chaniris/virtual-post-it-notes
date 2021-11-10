@@ -1,12 +1,11 @@
 import React from 'react';
 
 const StickyMessage = (props) => {
-
-    const { uniqueId, title, removeEntry } = props;
+    const { uniqueId, message, removeEntry } = props;
 
     return (
         <li key={uniqueId}>
-            <p>{title}</p>
+            <p>{message}</p>
 
             <button 
                 className='removeButton'

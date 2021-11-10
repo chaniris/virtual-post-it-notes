@@ -1,6 +1,5 @@
 const FormContainer = (props) => {
-
-    const { handleSubmit, handleChange, userInput, inputError, onKeyPress } = props;
+    const { handleSubmit, handleChange, onKeyPress, userInput, inputError } = props;
 
     return (
         <form onSubmit={handleSubmit}>

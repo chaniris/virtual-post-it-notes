@@ -1,12 +1,10 @@
-import gif from "./assets/giphy.gif"
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import gif from "./assets/giphy.gif"
 
 const Suggestion = () => {
-
-    const [suggestions, setSuggestions] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [ suggestions, setSuggestions ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
         axios({
@@ -14,8 +12,8 @@ const Suggestion = () => {
             method: 'GET',
             dataResponse: 'json',
         }).then((res) => {
-            setSuggestions(res.data);
             setLoading(false);
+            setSuggestions(res.data);
         });
     }, []);
 
@@ -23,8 +21,8 @@ const Suggestion = () => {
         return (
             <div className='suggestionContainer'>
                 <h3>Idea of the Day</h3>
-                <div class="loading">
-                    <img src={gif} alt="Loading" />
+                <div className="loading">
+                    <img src={gif} alt="Loading screen" />
                 </div>
             </div>
         )
