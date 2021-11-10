@@ -1,1 +1,1 @@
-An application that allows users to post memos to a public whiteboard
+An application that allows users to post and remove memos to/from a public whiteboard
