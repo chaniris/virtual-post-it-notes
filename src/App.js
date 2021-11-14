@@ -37,29 +37,16 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (userInput && userInput.trim(userInput.length !== 0)) {
+    if (!userInput || !userInput.trim()) {
+      setInputError('Input field cannot be blank.');
+    } else {
       const dbRef = ref(realtime); 
       push(dbRef, userInput); 
       setUserInput('');
-    } else {
-      setInputError('Input field cannot be blank.');
-    }
+    } 
   }
 
-  const onKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      if (userInput && userInput.trim(userInput.length !== 0)) {
-        const dbRef = ref(realtime);
-        push(dbRef, userInput);
-        setUserInput('');
-      } else {
-        setInputError('Input field cannot be blank.');
-      }
-    }  
-  };
-
-  const handleRemoval = (deleteField) => {
+  const handleRemove = (deleteField) => {
     const childNode = ref(realtime, deleteField);
     remove(childNode);
   }
@@ -72,7 +59,6 @@ const App = () => {
         <FormContainer 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
-          onKeyPress={onKeyPress}
           userInput={userInput}
           inputError={inputError}
         />
@@ -100,7 +86,7 @@ const App = () => {
                           confirmButtonText: 'Yes'
                         }).then(result => {
                           if (result.value) {
-                            handleRemoval(entry.id); 
+                            handleRemove(entry.id);
                             Swal.fire({
                                 title: 'Success!',
                                 text: 'Your entry has been deleted.',
@@ -123,14 +109,14 @@ const App = () => {
         <p>
           Copyright © 2021
           {' '}
-          <a href='https://junocollege.com/' target="_blank" rel="noopener">Juno College of Technology</a>
+          <a href='https://junocollege.com/'>Juno College of Technology</a>
           {' '}
           (formerly HackerYou)
         </p>
         <p>
           Data courtesy of
           {' '}
-          <a href='https://www.boredapi.com/' target="_blank" rel="noopener">Bored API</a>
+          <a href='https://www.boredapi.com/'>Bored API</a>
         </p>
       </footer>
     </div>

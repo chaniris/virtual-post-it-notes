@@ -31,8 +31,7 @@ form {
     max-width: 1800px; 
 } 
 
-textarea {
-    resize: none; 
+input {
     display: block; 
     width: 400px; 
     height: 100px; 
@@ -40,6 +39,12 @@ textarea {
     padding: 10px; 
     border-radius: 10px;
 } 
+
+input::placeholder {
+    white-space: pre-line; 
+    position: relative; 
+    top: -25px; 
+}
 
 .errorMessage {
     font-size: 1rem; 

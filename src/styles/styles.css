@@ -286,14 +286,43 @@ form {
   max-width: 1800px;
 }
 
-textarea {
-  resize: none;
+input {
   display: block;
   width: 400px;
   height: 100px;
   margin: 25px auto;
   padding: 10px;
   border-radius: 10px;
+}
+
+input::-webkit-input-placeholder {
+  white-space: pre-line;
+  position: relative;
+  top: -25px;
+}
+
+input::-moz-placeholder {
+  white-space: pre-line;
+  position: relative;
+  top: -25px;
+}
+
+input:-ms-input-placeholder {
+  white-space: pre-line;
+  position: relative;
+  top: -25px;
+}
+
+input::-ms-input-placeholder {
+  white-space: pre-line;
+  position: relative;
+  top: -25px;
+}
+
+input::placeholder {
+  white-space: pre-line;
+  position: relative;
+  top: -25px;
 }
 
 .errorMessage {
