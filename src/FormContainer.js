@@ -9,7 +9,7 @@ const FormContainer = (props) => {
                 id="userMessage"
                 onChange={handleChange}
                 value={userInput}
-                placeholder="Ex. Prep holiday party and open up discussion for theme."
+                placeholder="Ex. Host a Christmas party"
             />
 
             <p className='errorMessage'>{inputError}</p>
